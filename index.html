@@ -12,616 +12,613 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-  :root{
-    --paper:#FBF6F3;
-    --paper-raised:#FFFFFF;
-    --ink:#241712;
-    --ink-dim:#5C4740;
-    --ink-faint:#96827A;
-    --line:#EEE0D8;
-    --apricot:#D9714E;
-    --apricot-deep:#B04E30;
-    --apricot-tint:#F7DDD0;
-    --noir:#241712;
-    --noir-deep:#000000;
-    --noir-tint:#F0E5DE;
-    --live:#2F7A4C;
-    --shadow: 0 1px 2px rgba(36,23,18,0.06), 0 10px 28px rgba(36,23,18,0.08);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#160F0C;
-      --paper-raised:#231A16;
-      --ink:#F6EAE3;
-      --ink-dim:#CDB4A9;
-      --ink-faint:#8C7168;
-      --line:#3A2A22;
-      --apricot:#F0916A;
-      --apricot-deep:#FFB491;
-      --apricot-tint:#3A241C;
-      --noir:#F6EAE3;
-      --noir-deep:#FFFFFF;
-      --noir-tint:#2A1F1A;
-      --live:#66CD8C;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#160F0C;
-    --paper-raised:#231A16;
-    --ink:#F6EAE3;
-    --ink-dim:#CDB4A9;
-    --ink-faint:#8C7168;
-    --line:#3A2A22;
-    --apricot:#F0916A;
-    --apricot-deep:#FFB491;
-    --apricot-tint:#3A241C;
-    --noir:#F6EAE3;
-    --noir-deep:#FFFFFF;
-    --noir-tint:#2A1F1A;
-    --live:#66CD8C;
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
-  }
+:root{
+--paper:#FBF6F3;
+--paper-raised:#FFFFFF;
+--ink:#241712;
+--ink-dim:#5C4740;
+--ink-faint:#96827A;
+--line:#EEE0D8;
+--apricot:#D9714E;
+--apricot-deep:#B04E30;
+--apricot-tint:#F7DDD0;
+--noir:#241712;
+--noir-deep:#000000;
+--noir-tint:#F0E5DE;
+--live:#2F7A4C;
+--shadow: 0 1px 2px rgba(36,23,18,0.06), 0 10px 28px rgba(36,23,18,0.08);
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--paper:#160F0C;
+--paper-raised:#231A16;
+--ink:#F6EAE3;
+--ink-dim:#CDB4A9;
+--ink-faint:#8C7168;
+--line:#3A2A22;
+--apricot:#F0916A;
+--apricot-deep:#FFB491;
+--apricot-tint:#3A241C;
+--noir:#F6EAE3;
+--noir-deep:#FFFFFF;
+--noir-tint:#2A1F1A;
+--live:#66CD8C;
+--shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
+}
+}
+:root[data-theme="dark"]{
+--paper:#160F0C;
+--paper-raised:#231A16;
+--ink:#F6EAE3;
+--ink-dim:#CDB4A9;
+--ink-faint:#8C7168;
+--line:#3A2A22;
+--apricot:#F0916A;
+--apricot-deep:#FFB491;
+--apricot-tint:#3A241C;
+--noir:#F6EAE3;
+--noir-deep:#FFFFFF;
+--noir-tint:#2A1F1A;
+--live:#66CD8C;
+--shadow: 0 1px 2px rgba(0,0,0,0.4), 0 14px 34px rgba(0,0,0,0.5);
+}
 
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit;}
-  h1,h2,h3{font-family:'Fraunces', Georgia, 'Times New Roman', serif; font-weight:600; text-wrap:balance; margin:0;}
-  p{margin:0;}
-  .mono{font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric:tabular-nums;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 2.5rem);}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+line-height:1.55;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+a{color:inherit;}
+h1,h2,h3{font-family:'Fraunces', Georgia, 'Times New Roman', serif; font-weight:600; text-wrap:balance; margin:0;}
+p{margin:0;}
+.mono{font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric:tabular-nums;}
+.wrap{max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 2.5rem);}
 
-  a:focus-visible, button:focus-visible{outline:2px solid var(--apricot); outline-offset:3px; border-radius:4px;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--apricot); outline-offset:3px; border-radius:4px;}
 
-  /* ---------- Masthead ---------- */
-  .masthead{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);}
-  .masthead__top{
-    max-width:1080px; margin:0 auto; padding:0.9rem clamp(1.25rem, 4vw, 2.5rem) 0.7rem;
-    display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap;
-  }
-  .wordmark{font-family:'Fraunces', serif; font-weight:700; font-size:1.35rem; text-decoration:none; letter-spacing:-0.01em;}
-  .masthead__kicker{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint);}
-  .ticker{border-top:1px solid var(--line); background:var(--apricot-tint); overflow:hidden; white-space:nowrap;}
-  .ticker__track{display:inline-flex; gap:2.5rem; padding:0.45rem clamp(1.25rem, 4vw, 2.5rem); animation:ticker 32s linear infinite;}
-  .ticker__track span{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.03em; color:var(--apricot-deep); font-weight:500;}
-  @keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-  @media (prefers-reduced-motion: reduce){ .ticker__track{animation:none;} }
+/* ---------- Masthead ---------- */
+.masthead{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);}
+.masthead__top{
+max-width:1080px; margin:0 auto; padding:0.9rem clamp(1.25rem, 4vw, 2.5rem) 0.7rem;
+display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+}
+.wordmark{font-family:'Fraunces', serif; font-weight:700; font-size:1.35rem; text-decoration:none; letter-spacing:-0.01em;}
+.masthead__kicker{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint);}
+.ticker{border-top:1px solid var(--line); background:var(--apricot-tint); overflow:hidden; white-space:nowrap;}
+.ticker__track{display:inline-flex; gap:2.5rem; padding:0.45rem clamp(1.25rem, 4vw, 2.5rem); animation:ticker 32s linear infinite;}
+.ticker__track span{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.03em; color:var(--apricot-deep); font-weight:500;}
+@keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){ .ticker__track{animation:none;} }
 
-  /* ---------- Hero ---------- */
-  .hero{padding:clamp(2.75rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);}
-  .dateline{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--noir); font-weight:600;}
-  .hero h1{font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; margin-top:0.6rem; letter-spacing:-0.02em;}
-  .hero__sub{max-width:42rem; margin-top:1.25rem; font-size:1.08rem; color:var(--ink-dim); max-width:60ch;}
-  .hero__meta{margin-top:1.4rem; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
-  .tag{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.2rem 0.5rem; border-radius:3px; font-weight:600;}
-  .tag--sample{background:var(--noir-tint); color:var(--ink-dim);}
-  .tag--live{background:var(--apricot-tint); color:var(--apricot-deep);}
-  .hero__actions{margin-top:2rem; display:flex; gap:0.9rem; flex-wrap:wrap;}
-  .btn{display:inline-flex; align-items:center; gap:0.4rem; padding:0.75rem 1.3rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:0.92rem; border:1px solid transparent; transition:transform .15s ease, background .15s ease;}
-  .btn--primary{background:var(--apricot); color:#fff;}
-  .btn--primary:hover{background:var(--apricot-deep); transform:translateY(-1px);}
-  .btn--ghost{border-color:var(--line); color:var(--ink);}
-  .btn--ghost:hover{border-color:var(--apricot); color:var(--apricot-deep);}
+/* ---------- Hero ---------- */
+.hero{padding:clamp(2.75rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);}
+.dateline{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--noir); font-weight:600;}
+.hero h1{font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; margin-top:0.6rem; letter-spacing:-0.02em;}
+.hero__sub{max-width:42rem; margin-top:1.25rem; font-size:1.08rem; color:var(--ink-dim); max-width:60ch;}
+.hero__meta{margin-top:1.4rem; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
+.tag{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.2rem 0.5rem; border-radius:3px; font-weight:600;}
+.tag--sample{background:var(--noir-tint); color:var(--ink-dim);}
+.tag--live{background:var(--apricot-tint); color:var(--apricot-deep);}
+.hero__actions{margin-top:2rem; display:flex; gap:0.9rem; flex-wrap:wrap;}
+.btn{display:inline-flex; align-items:center; gap:0.4rem; padding:0.75rem 1.3rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:0.92rem; border:1px solid transparent; transition:transform .15s ease, background .15s ease;}
+.btn--primary{background:var(--apricot); color:#fff;}
+.btn--primary:hover{background:var(--apricot-deep); transform:translateY(-1px);}
+.btn--ghost{border-color:var(--line); color:var(--ink);}
+.btn--ghost:hover{border-color:var(--apricot); color:var(--apricot-deep);}
 
-  /* ---------- Section scaffolding ---------- */
-  .section-label{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.9rem;}
-  .desk-section{padding:clamp(2.75rem,6vw,4.5rem) 0; border-top:1px solid var(--line);}
-  .desk-section--alt{background:var(--paper-raised);}
-  .desk-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;}
-  .desk-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);}
-  .desk-note{max-width:34ch; font-size:0.88rem; color:var(--ink-dim);}
+/* ---------- Section scaffolding ---------- */
+.section-label{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.9rem;}
+.desk-section{padding:clamp(2.75rem,6vw,4.5rem) 0; border-top:1px solid var(--line);}
+.desk-section--alt{background:var(--paper-raised);}
+.desk-head{display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;}
+.desk-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);}
+.desk-note{max-width:34ch; font-size:0.88rem; color:var(--ink-dim);}
 
-  /* ---------- Desk grid ---------- */
-  .desks{padding:clamp(2.5rem,6vw,4rem) 0 0;}
-  .desk-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
-  .desk-card{background:var(--paper-raised); padding:1.5rem; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:0.8rem; transition:background .15s ease;}
-  .desk-card:hover{background:var(--apricot-tint);}
-  .desk-card__num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--noir); font-weight:600; letter-spacing:0.06em;}
-  .desk-card svg{width:26px; height:26px; stroke:var(--apricot); fill:none; stroke-width:1.6;}
-  .desk-card h3{font-size:1.05rem; font-weight:600;}
-  .desk-card p{font-size:0.86rem; color:var(--ink-dim);}
+/* ---------- Desk grid ---------- */
+.desks{padding:clamp(2.5rem,6vw,4rem) 0 0;}
+.desk-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+.desk-card{background:var(--paper-raised); padding:1.5rem; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:0.8rem; transition:background .15s ease;}
+.desk-card:hover{background:var(--apricot-tint);}
+.desk-card__num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--noir); font-weight:600; letter-spacing:0.06em;}
+.desk-card svg{width:26px; height:26px; stroke:var(--apricot); fill:none; stroke-width:1.6;}
+.desk-card h3{font-size:1.05rem; font-weight:600;}
+.desk-card p{font-size:0.86rem; color:var(--ink-dim);}
 
-  /* ---------- News desk ---------- */
-  .dispatch-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem;}
-  .dispatch{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.4rem; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:0.7rem;}
-  .dispatch__eyebrow{display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color:var(--ink-faint); letter-spacing:0.05em;}
-  .dispatch h3{font-size:1.1rem; line-height:1.3;}
-  .dispatch p{font-size:0.9rem; color:var(--ink-dim);}
-  .dispatch__credit{font-size:0.76rem; color:var(--ink-faint); border-top:1px dashed var(--line); padding-top:0.7rem; margin-top:0.2rem;}
-  .dispatch__link{font-size:0.82rem; font-weight:600; color:var(--apricot-deep); text-decoration:none;}
-  .dispatch__link:hover{text-decoration:underline;}
+/* ---------- News desk ---------- */
+.dispatch-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem;}
+.dispatch{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.4rem; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:0.7rem;}
+.dispatch__eyebrow{display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:0.66rem; color:var(--ink-faint); letter-spacing:0.05em;}
+.dispatch h3{font-size:1.1rem; line-height:1.3;}
+.dispatch p{font-size:0.9rem; color:var(--ink-dim);}
+.dispatch__credit{font-size:0.76rem; color:var(--ink-faint); border-top:1px dashed var(--line); padding-top:0.7rem; margin-top:0.2rem;}
+.dispatch__link{font-size:0.82rem; font-weight:600; color:var(--apricot-deep); text-decoration:none;}
+.dispatch__link:hover{text-decoration:underline;}
 
-  /* ---------- Review desk ---------- */
-  .review{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:2.5rem; align-items:start;}
-  .review__stamp{border:1px solid var(--noir); color:var(--noir); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.1em; padding:0.85rem 1rem; border-radius:4px; text-align:center;}
-  .review__stamp .score{display:block; font-size:1.6rem; color:var(--ink); font-weight:600; margin-bottom:0.15rem;}
-  .review blockquote{font-family:'Fraunces', serif; font-style:italic; font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.4; margin:0 0 1rem; color:var(--ink);}
-  .review__body p{color:var(--ink-dim); font-size:0.95rem; margin-bottom:0.9rem;}
-  .tracklist{list-style:none; margin:0 0 1rem; padding:0; font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--ink-dim); display:grid; gap:0.35rem;}
-  .tracklist li{display:flex; gap:0.6rem;}
-  .tracklist span.n{color:var(--ink-faint); width:1.4rem; flex-shrink:0;}
-  .tracklist li.title-track{color:var(--apricot-deep); font-weight:600;}
-  @media (max-width: 720px){ .review{grid-template-columns:1fr;} .review__stamp{width:fit-content;} }
+/* ---------- Review desk ---------- */
+.review{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:2.5rem; align-items:start;}
+.review__stamp{border:1px solid var(--noir); color:var(--noir); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.1em; padding:0.85rem 1rem; border-radius:4px; text-align:center;}
+.review__stamp .score{display:block; font-size:1.6rem; color:var(--ink); font-weight:600; margin-bottom:0.15rem;}
+.review blockquote{font-family:'Fraunces', serif; font-style:italic; font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.4; margin:0 0 1rem; color:var(--ink);}
+.review__body p{color:var(--ink-dim); font-size:0.95rem; margin-bottom:0.9rem;}
+.tracklist{list-style:none; margin:0 0 1rem; padding:0; font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--ink-dim); display:grid; gap:0.35rem;}
+.tracklist li{display:flex; gap:0.6rem;}
+.tracklist span.n{color:var(--ink-faint); width:1.4rem; flex-shrink:0;}
+.tracklist li.title-track{color:var(--apricot-deep); font-weight:600;}
+@media (max-width: 720px){ .review{grid-template-columns:1fr;} .review__stamp{width:fit-content;} }
 
-  /* ---------- Screening room ---------- */
-  .screen-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;}
-  .screen-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:var(--shadow);}
-  .screen-card__frame{position:relative; aspect-ratio:16/9; background:#000;}
-  .screen-card__frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
-  .screen-card__placeholder{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.6rem; color:var(--ink-faint); background:var(--apricot-tint);}
-  .screen-card__placeholder svg{width:34px; height:34px; stroke:var(--apricot); fill:none; stroke-width:1.5;}
-  .screen-card__body{padding:1.1rem 1.3rem;}
-  .screen-card__body h3{font-size:0.98rem; margin-bottom:0.35rem;}
-  .screen-card__body p{font-size:0.84rem; color:var(--ink-dim);}
+/* ---------- Screening room ---------- */
+.screen-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;}
+.screen-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:var(--shadow);}
+.screen-card__frame{position:relative; aspect-ratio:16/9; background:#000;}
+.screen-card__frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+.screen-card__placeholder{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.6rem; color:var(--ink-faint); background:var(--apricot-tint);}
+.screen-card__placeholder svg{width:34px; height:34px; stroke:var(--apricot); fill:none; stroke-width:1.5;}
+.screen-card__body{padding:1.1rem 1.3rem;}
+.screen-card__body h3{font-size:0.98rem; margin-bottom:0.35rem;}
+.screen-card__body p{font-size:0.84rem; color:var(--ink-dim);}
 
-  /* ---------- Signal desk ---------- */
-  .signal-list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper-raised);}
-  .signal-row{display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; padding:1.1rem 1.4rem; border-top:1px solid var(--line);}
-  .signal-row:first-child{border-top:none;}
-  .signal-row__name{font-weight:600; font-size:0.98rem;}
-  .signal-row__meta{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); margin-top:0.25rem;}
-  .signal-row__countdown{font-family:'IBM Plex Mono', monospace; font-size:0.95rem; font-weight:600; color:var(--apricot-deep); text-align:right; white-space:nowrap;}
-  .signal-row__countdown small{display:block; font-size:0.62rem; font-weight:500; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em;}
-  .signal-footnote{margin-top:1rem; font-size:0.78rem; color:var(--ink-faint);}
-  @media (max-width:560px){ .signal-row{grid-template-columns:1fr;} .signal-row__countdown{text-align:left;} }
+/* ---------- Signal desk ---------- */
+.signal-list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper-raised);}
+.signal-row{display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; padding:1.1rem 1.4rem; border-top:1px solid var(--line);}
+.signal-row:first-child{border-top:none;}
+.signal-row__name{font-weight:600; font-size:0.98rem;}
+.signal-row__meta{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--ink-faint); margin-top:0.25rem;}
+.signal-row__countdown{font-family:'IBM Plex Mono', monospace; font-size:0.95rem; font-weight:600; color:var(--apricot-deep); text-align:right; white-space:nowrap;}
+.signal-row__countdown small{display:block; font-size:0.62rem; font-weight:500; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em;}
+.signal-footnote{margin-top:1rem; font-size:0.78rem; color:var(--ink-faint);}
+@media (max-width:560px){ .signal-row{grid-template-columns:1fr;} .signal-row__countdown{text-align:left;} }
 
-  /* ---------- Quiz desk ---------- */
-  .quiz-panel{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow); max-width:640px;}
-  .quiz-progress{font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-faint); margin-bottom:0.6rem; letter-spacing:0.05em;}
-  .quiz-question{font-size:1.2rem; margin-bottom:1.1rem;}
-  .quiz-options{display:grid; gap:0.6rem;}
-  .quiz-option{text-align:left; padding:0.8rem 1rem; border:1px solid var(--line); border-radius:5px; background:transparent; color:var(--ink); font-family:inherit; font-size:0.92rem; cursor:pointer; transition:border-color .15s ease, background .15s ease;}
-  .quiz-option:hover{border-color:var(--apricot); background:var(--apricot-tint);}
-  .quiz-result{display:none;}
-  .quiz-result.is-active{display:block;}
-  .quiz-question-wrap.is-hidden{display:none;}
-  .quiz-result__title{font-size:1.4rem; margin-bottom:0.6rem;}
-  .quiz-result__body{color:var(--ink-dim); font-size:0.95rem; margin-bottom:1rem;}
-  .quiz-result__track{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--noir); margin-bottom:1.2rem;}
-  .quiz-reset{font-size:0.85rem; font-weight:600; color:var(--apricot-deep); background:none; border:none; cursor:pointer; padding:0; font-family:inherit;}
-  .quiz-reset:hover{text-decoration:underline;}
+/* ---------- Quiz desk ---------- */
+.quiz-panel{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow); max-width:640px;}
+.quiz-progress{font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-faint); margin-bottom:0.6rem; letter-spacing:0.05em;}
+.quiz-question{font-size:1.2rem; margin-bottom:1.1rem;}
+.quiz-options{display:grid; gap:0.6rem;}
+.quiz-option{text-align:left; padding:0.8rem 1rem; border:1px solid var(--line); border-radius:5px; background:transparent; color:var(--ink); font-family:inherit; font-size:0.92rem; cursor:pointer; transition:border-color .15s ease, background .15s ease;}
+.quiz-option:hover{border-color:var(--apricot); background:var(--apricot-tint);}
+.quiz-result{display:none;}
+.quiz-result.is-active{display:block;}
+.quiz-question-wrap.is-hidden{display:none;}
+.quiz-result__title{font-size:1.4rem; margin-bottom:0.6rem;}
+.quiz-result__body{color:var(--ink-dim); font-size:0.95rem; margin-bottom:1rem;}
+.quiz-result__track{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--noir); margin-bottom:1.2rem;}
+.quiz-reset{font-size:0.85rem; font-weight:600; color:var(--apricot-deep); background:none; border:none; cursor:pointer; padding:0; font-family:inherit;}
+.quiz-reset:hover{text-decoration:underline;}
 
-  /* ---------- Market desk ---------- */
-  .market-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1.4rem;}
-  .market-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.3rem; display:flex; flex-direction:column; gap:0.6rem; box-shadow:var(--shadow);}
-  .market-card h3{font-size:1.02rem;}
-  .market-card p{font-size:0.85rem; color:var(--ink-dim);}
-  .market-card a{font-size:0.85rem; font-weight:600; color:var(--apricot-deep); text-decoration:none;}
-  .market-card a:hover{text-decoration:underline;}
+/* ---------- Market desk ---------- */
+.market-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1.4rem;}
+.market-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:6px; padding:1.3rem; display:flex; flex-direction:column; gap:0.6rem; box-shadow:var(--shadow);}
+.market-card h3{font-size:1.02rem;}
+.market-card p{font-size:0.85rem; color:var(--ink-dim);}
+.market-card a{font-size:0.85rem; font-weight:600; color:var(--apricot-deep); text-decoration:none;}
+.market-card a:hover{text-decoration:underline;}
 
-  /* ---------- Footer / colophon ---------- */
-  .colophon{border-top:1px solid var(--line); background:var(--paper-raised); padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem;}
-  .colophon__grid{display:grid; grid-template-columns:1.1fr 1.4fr; gap:2.5rem;}
-  .colophon .wordmark{font-size:1.15rem;}
-  .colophon p{font-size:0.82rem; color:var(--ink-dim); margin-top:0.9rem; max-width:46ch;}
-  .colophon__fine{font-size:0.72rem; color:var(--ink-faint); margin-top:1.5rem; font-family:'IBM Plex Mono', monospace; line-height:1.6;}
-  @media (max-width:720px){ .colophon__grid{grid-template-columns:1fr;} }
+/* ---------- Footer / colophon ---------- */
+.colophon{border-top:1px solid var(--line); background:var(--paper-raised); padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem;}
+.colophon__grid{display:grid; grid-template-columns:1.1fr 1.4fr; gap:2.5rem;}
+.colophon .wordmark{font-size:1.15rem;}
+.colophon p{font-size:0.82rem; color:var(--ink-dim); margin-top:0.9rem; max-width:46ch;}
+.colophon__fine{font-size:0.72rem; color:var(--ink-faint); margin-top:1.5rem; font-family:'IBM Plex Mono', monospace; line-height:1.6;}
+@media (max-width:720px){ .colophon__grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
 <div class="page">
-  <header class="masthead" id="top">
-    <div class="masthead__top">
-      <a class="wordmark" href="#top">TWICE Wire</a>
-      <span class="masthead__kicker">Unofficial ONCE Dispatch · English Edition</span>
-    </div>
-    <div class="ticker" aria-label="Latest wire headlines">
-      <div class="ticker__track">
-        <span>#BEST 2015-2025 LANDS AUG 26 — 50 TRACKS ACROSS FOUR DISCS, A DECADE IN FULL</span>
-        <span>JEONGYEON AND CHAEYOUNG BOTH EXIT JYP'S EXCLUSIVE CONTRACT — BOTH STAY IN TWICE</span>
-        <span>"THIS IS FOR" WORLD TOUR WRAPS AFTER 81 SHOWS — THE GROUP'S BIGGEST RUN YET</span>
-        <span>NINE MEMBERS, TEN YEARS, ZERO DEPARTURES FROM THE GROUP ITSELF</span>
-        <span>#BEST 2015-2025 LANDS AUG 26 — 50 TRACKS ACROSS FOUR DISCS, A DECADE IN FULL</span>
-        <span>JEONGYEON AND CHAEYOUNG BOTH EXIT JYP'S EXCLUSIVE CONTRACT — BOTH STAY IN TWICE</span>
-        <span>"THIS IS FOR" WORLD TOUR WRAPS AFTER 81 SHOWS — THE GROUP'S BIGGEST RUN YET</span>
-        <span>NINE MEMBERS, TEN YEARS, ZERO DEPARTURES FROM THE GROUP ITSELF</span>
-      </div>
-    </div>
-  </header>
+<header class="masthead" id="top">
+<div class="masthead__top">
+<a class="wordmark" href="#top">TWICE Wire</a>
+<span class="masthead__kicker">Unofficial ONCE Dispatch · English Edition</span>
+</div>
+<div class="ticker" aria-label="Latest wire headlines">
+<div class="ticker__track">
+<span>#BEST 2015-2025 LANDS AUG 26 — 50 TRACKS ACROSS FOUR DISCS, A DECADE IN FULL</span>
+<span>JEONGYEON AND CHAEYOUNG BOTH EXIT JYP'S EXCLUSIVE CONTRACT — BOTH STAY IN TWICE</span>
+<span>"THIS IS FOR" WORLD TOUR WRAPS AFTER 81 SHOWS — THE GROUP'S BIGGEST RUN YET</span>
+<span>NINE MEMBERS, TEN YEARS, ZERO DEPARTURES FROM THE GROUP ITSELF</span>
+<span>#BEST 2015-2025 LANDS AUG 26 — 50 TRACKS ACROSS FOUR DISCS, A DECADE IN FULL</span>
+<span>JEONGYEON AND CHAEYOUNG BOTH EXIT JYP'S EXCLUSIVE CONTRACT — BOTH STAY IN TWICE</span>
+<span>"THIS IS FOR" WORLD TOUR WRAPS AFTER 81 SHOWS — THE GROUP'S BIGGEST RUN YET</span>
+<span>NINE MEMBERS, TEN YEARS, ZERO DEPARTURES FROM THE GROUP ITSELF</span>
+</div>
+</div>
+</header>
 
-  <main>
-    <section class="hero wrap">
-      <p class="dateline">SEOUL — AUGUST 2026</p>
-      <h1>Ten years in,<br>nine still together.</h1>
-      <p class="hero__sub">TWICE just marked ten years since their 2015 debut with <em>#BEST 2015-2025</em>, a 50-track, four-disc career-spanning compilation released August 26. It lands weeks after Jeongyeon (August 10) and Chaeyoung (August 13) each ended their exclusive contracts with JYP Entertainment to manage solo work independently — Jeongyeon through newly-signed VARO Entertainment, Chaeyoung through her own "Lil Fantasy" banner — while both explicitly confirmed they're staying in TWICE, with group activities continuing under JYP as before. The group's This Is For World Tour wrapped in July after 81 shows, its biggest run yet. This page is a working build of how <strong>TWICE Wire</strong> tracks all of it for English-speaking ONCE — translated, sourced, and converted to whatever timezone you're reading from.</p>
-      <p class="hero__meta">DISPATCH NO. 0001 · FILED 09:00 KST · <span class="tag tag--live">#BEST 2015-2025 Era · 2026</span></p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#desks">Enter the wire room ↓</a>
-        <a class="btn btn--ghost" href="#about">What is this?</a>
-      </div>
-    </section>
+<main>
+<section class="hero wrap">
+<p class="dateline">SEOUL — AUGUST 2026</p>
+<h1>Ten years in,<br>nine still together.</h1>
+<p class="hero__sub">TWICE just marked ten years since their 2015 debut with <em>#BEST 2015-2025</em>, a 50-track, four-disc career-spanning compilation released August 26. It lands weeks after Jeongyeon (August 10) and Chaeyoung (August 13) each ended their exclusive contracts with JYP Entertainment to manage solo work independently — Jeongyeon through newly-signed VARO Entertainment, Chaeyoung through her own "Lil Fantasy" banner — while both explicitly confirmed they're staying in TWICE, with group activities continuing under JYP as before. The group's This Is For World Tour wrapped in July after 81 shows, its biggest run yet. This page is a working build of how <strong>TWICE Wire</strong> tracks all of it for English-speaking ONCE — translated, sourced, and converted to whatever timezone you're reading from.</p>
+<p class="hero__meta">DISPATCH NO. 0001 · FILED 09:00 KST · <span class="tag tag--live">#BEST 2015-2025 Era · 2026</span></p>
+<div class="hero__actions">
+<a class="btn btn--primary" href="#desks">Enter the wire room ↓</a>
+<a class="btn btn--ghost" href="#about">What is this?</a>
+</div>
+</section>
 
-    <section class="desks wrap" id="desks">
-      <p class="section-label">The desks</p>
-      <div class="desk-grid">
-        <a class="desk-card" href="#news">
-          <span class="desk-card__num">DESK 01</span>
-          <svg viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4Z"/><path d="M17 4v14a2 2 0 0 0 2 2h1"/><path d="M7 8h8M7 12h8M7 16h5"/></svg>
-          <h3>News Desk</h3>
-          <p>Korean and English coverage, translated and summarized — always credited back to the original outlet.</p>
-        </a>
-        <a class="desk-card" href="#reviews">
-          <span class="desk-card__num">DESK 02</span>
-          <svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.8 6.9 18l1.3-5.5-4.2-3.8 5.6-.6L12 3Z"/></svg>
-          <h3>Review Desk</h3>
-          <p>Track-by-track reads on every era, from <em>Like Ooh-Ahh</em> to whatever's coming next.</p>
-        </a>
-        <a class="desk-card" href="#screening">
-          <span class="desk-card__num">DESK 03</span>
-          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
-          <h3>Screening Room</h3>
-          <p>Official videos only, curated and embedded — never reuploaded.</p>
-        </a>
-        <a class="desk-card" href="#signal">
-          <span class="desk-card__num">DESK 04</span>
-          <svg viewBox="0 0 24 24"><path d="M12 20v-6"/><path d="M8.5 17.5a5 5 0 0 1 0-9"/><path d="M4.5 20a10 10 0 0 1 0-16"/><path d="M15.5 17.5a5 5 0 0 0 0-9"/><path d="M19.5 20a10 10 0 0 0 0-16"/><circle cx="12" cy="12" r="1.4"/></svg>
-          <h3>Signal Desk</h3>
-          <p>No new tour or comeback is confirmed yet — this tracks how recent the latest news is.</p>
-        </a>
-        <a class="desk-card" href="#quiz">
-          <span class="desk-card__num">DESK 05</span>
-          <svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.1-1.5 2.2"/><circle cx="12" cy="17.5" r="0.9" fill="var(--apricot)"/><circle cx="12" cy="12" r="9"/></svg>
-          <h3>Quiz Desk</h3>
-          <p>Quick, shareable quizzes built for the group chat, not the algorithm.</p>
-        </a>
-        <a class="desk-card" href="#market">
-          <span class="desk-card__num">DESK 06</span>
-          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-          <h3>Market Desk</h3>
-          <p>Where to buy official merch abroad, without the guesswork.</p>
-        </a>
-      </div>
-    </section>
+<section class="desks wrap" id="desks">
+<p class="section-label">The desks</p>
+<div class="desk-grid">
+<a class="desk-card" href="#news">
+<span class="desk-card__num">DESK 01</span>
+<svg viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4Z"/><path d="M17 4v14a2 2 0 0 0 2 2h1"/><path d="M7 8h8M7 12h8M7 16h5"/></svg>
+<h3>News Desk</h3>
+<p>Korean and English coverage, translated and summarized — always credited back to the original outlet.</p>
+</a>
+<a class="desk-card" href="#reviews">
+<span class="desk-card__num">DESK 02</span>
+<svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.8 6.9 18l1.3-5.5-4.2-3.8 5.6-.6L12 3Z"/></svg>
+<h3>Review Desk</h3>
+<p>Track-by-track reads on every era, from <em>Like Ooh-Ahh</em> to whatever's coming next.</p>
+</a>
+<a class="desk-card" href="#screening">
+<span class="desk-card__num">DESK 03</span>
+<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
+<h3>Screening Room</h3>
+<p>Official videos only, curated and embedded — never reuploaded.</p>
+</a>
+<a class="desk-card" href="#signal">
+<span class="desk-card__num">DESK 04</span>
+<svg viewBox="0 0 24 24"><path d="M12 20v-6"/><path d="M8.5 17.5a5 5 0 0 1 0-9"/><path d="M4.5 20a10 10 0 0 1 0-16"/><path d="M15.5 17.5a5 5 0 0 0 0-9"/><path d="M19.5 20a10 10 0 0 0 0-16"/><circle cx="12" cy="12" r="1.4"/></svg>
+<h3>Signal Desk</h3>
+<p>No new tour or comeback is confirmed yet — this tracks how recent the latest news is.</p>
+</a>
+<a class="desk-card" href="#quiz">
+<span class="desk-card__num">DESK 05</span>
+<svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1.5 1.1-1.5 2.2"/><circle cx="12" cy="17.5" r="0.9" fill="var(--apricot)"/><circle cx="12" cy="12" r="9"/></svg>
+<h3>Quiz Desk</h3>
+<p>Quick, shareable quizzes built for the group chat, not the algorithm.</p>
+</a>
+<a class="desk-card" href="#market">
+<span class="desk-card__num">DESK 06</span>
+<svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+<h3>Market Desk</h3>
+<p>Where to buy official merch abroad, without the guesswork.</p>
+</a>
+</div>
+</section>
 
-    <section class="desk-section" id="news">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 01 · News</p>
-            <h2>Translated for the timeline you don't read.</h2>
-          </div>
-          <p class="desk-note">Every dispatch below links back to its original source, Korean or otherwise — this desk summarizes, it doesn't replace.</p>
-        </div>
-        <div class="dispatch-grid">
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>SEOUL — AUG 10–13</span></p>
-            <h3>Jeongyeon and Chaeyoung both exit JYP's exclusive contract — both stay in TWICE</h3>
-            <p>Jeongyeon signed with newly-formed VARO Entertainment for solo work on August 10; Chaeyoung followed on August 13 with her own independent "Lil Fantasy" banner. Both explicitly said the change affects solo management only — group activities continue under JYP as before. Jihyo and Tzuyu are separately reported to be weighing similar moves, unconfirmed as of this writing.</p>
-            <p class="dispatch__credit">Summarized from Forbes and K-Crush by TWICE Wire staff.</p>
-            <a class="dispatch__link" href="https://www.forbes.com/sites/hannahabraham/2026/08/13/twices-chaeyoung-announces-jyp-exit-to-start-new-venture/" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>TOKYO — AUG 26</span></p>
-            <h3>#BEST 2015-2025 lands: a 50-track, four-disc decade in full</h3>
-            <p>The Japanese anniversary compilation spans two Korean-repertoire discs (2015–2019 and 2020–2025) and two matching Japanese-language discs, running from "Like OOH-AHH" through "This Is For" and "Me+You." No new material is included — this is a career victory lap, not a comeback.</p>
-            <p class="dispatch__credit">Summarized from Billboard Philippines by TWICE Wire staff.</p>
-            <a class="dispatch__link" href="https://billboardphilippines.com/music/news/twice-best-album-2015-2025-release-2026/" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-          <article class="dispatch">
-            <p class="dispatch__eyebrow"><span>SEOUL — JUL 12</span></p>
-            <h3>This Is For World Tour wraps after 81 shows, the group's biggest run yet</h3>
-            <p>The tour launched July 2025 in Incheon, added a North America–Europe "In the Round" leg through spring 2026 including three sold-out nights at Tokyo's National Stadium — the first non-Japanese act to headline there solo — and closed with three encore shows at Seoul's KSPO Dome.</p>
-            <p class="dispatch__credit">Summarized from Wikipedia and tour reporting by TWICE Wire staff.</p>
-            <a class="dispatch__link" href="https://en.wikipedia.org/wiki/This_Is_For_World_Tour" target="_blank" rel="noopener">Read the original source ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="desk-section" id="news">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 01 · News</p>
+<h2>Translated for the timeline you don't read.</h2>
+</div>
+<p class="desk-note">Every dispatch below links back to its original source, Korean or otherwise — this desk summarizes, it doesn't replace.</p>
+</div>
+<div class="dispatch-grid">
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>SEOUL — AUG 10–13</span></p>
+<h3>Jeongyeon and Chaeyoung both exit JYP's exclusive contract — both stay in TWICE</h3>
+<p>Jeongyeon signed with newly-formed VARO Entertainment for solo work on August 10; Chaeyoung followed on August 13 with her own independent "Lil Fantasy" banner. Both explicitly said the change affects solo management only — group activities continue under JYP as before. Jihyo and Tzuyu are separately reported to be weighing similar moves, unconfirmed as of this writing.</p>
+<p class="dispatch__credit">Summarized from Forbes and K-Crush by TWICE Wire staff.</p>
+<a class="dispatch__link" href="https://www.forbes.com/sites/hannahabraham/2026/08/13/twices-chaeyoung-announces-jyp-exit-to-start-new-venture/" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>TOKYO — AUG 26</span></p>
+<h3>#BEST 2015-2025 lands: a 50-track, four-disc decade in full</h3>
+<p>The Japanese anniversary compilation spans two Korean-repertoire discs (2015–2019 and 2020–2025) and two matching Japanese-language discs, running from "Like OOH-AHH" through "This Is For" and "Me+You." No new material is included — this is a career victory lap, not a comeback.</p>
+<p class="dispatch__credit">Summarized from Billboard Philippines by TWICE Wire staff.</p>
+<a class="dispatch__link" href="https://billboardphilippines.com/music/news/twice-best-album-2015-2025-release-2026/" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+<article class="dispatch">
+<p class="dispatch__eyebrow"><span>SEOUL — JUL 12</span></p>
+<h3>This Is For World Tour wraps after 81 shows, the group's biggest run yet</h3>
+<p>The tour launched July 2025 in Incheon, added a North America–Europe "In the Round" leg through spring 2026 including three sold-out nights at Tokyo's National Stadium — the first non-Japanese act to headline there solo — and closed with three encore shows at Seoul's KSPO Dome.</p>
+<p class="dispatch__credit">Summarized from Wikipedia and tour reporting by TWICE Wire staff.</p>
+<a class="dispatch__link" href="https://en.wikipedia.org/wiki/This_Is_For_World_Tour" target="_blank" rel="noopener">Read the original source ↗</a>
+</article>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="reviews">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 02 · Review</p>
-            <h2>Revisiting the catalogue, track by track.</h2>
-          </div>
-          <p class="desk-note">Text only, always — no reposted photos or video frames on this desk.</p>
-        </div>
-        <div class="review">
-          <div class="review__stamp"><span class="score">3.9 / 5</span>EDITOR'S STAMP</div>
-          <div class="review__body">
-            <blockquote>"Nine solo showcases dressed up as a group album — generous to the members, a little exhausting as a single sitting, and worth it for at least three of the nine detours."</blockquote>
-            <p><strong>Ten: The Story Goes On (2025): TWICE's 10th-anniversary album, and the closest thing to a full-cast introduction the group has released.</strong> Lead single "Me+You" is a warm, '90s-leaning R&B-pop track about the group's relationship with fans; the other nine tracks are individual member solo songs, most previewed earlier on the This Is For World Tour.</p>
-            <p>Critics split roughly down the middle: Clash gave it 8/10, praising how far the members' individual styles had evolved; AllMusic was cooler at 3/5, calling it a fairly standard hip-hop-inflected pop outing. Both are fair reads of the same record — it plays better as nine spotlight moments than as nine songs meant to cohere.</p>
-            <ul class="tracklist">
-              <li class="title-track"><span class="n mono">01</span> Me+You · Title Track</li>
-              <li><span class="n mono">02</span> MEEEEEE (Nayeon Solo)</li>
-              <li><span class="n mono">03</span> Fix a Drink (Jeongyeon Solo)</li>
-              <li><span class="n mono">04</span> Move Like That (Momo Solo)</li>
-              <li><span class="n mono">05</span> Decaffeinated (Sana Solo)</li>
-              <li><span class="n mono">06</span> ATM (Jihyo Solo)</li>
-              <li><span class="n mono">07</span> Stone Cold (Mina Solo)</li>
-              <li><span class="n mono">08</span> Chess (Dahyun Solo)</li>
-              <li><span class="n mono">09</span> In My Room (Chaeyoung Solo)</li>
-              <li><span class="n mono">10</span> Dive In (Tzuyu Solo)</li>
-            </ul>
-            <a class="dispatch__link" href="https://en.wikipedia.org/wiki/Ten:_The_Story_Goes_On" target="_blank" rel="noopener">Read the full track-by-track →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="desk-section desk-section--alt" id="reviews">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 02 · Review</p>
+<h2>Revisiting the catalogue, track by track.</h2>
+</div>
+<p class="desk-note">Text only, always — no reposted photos or video frames on this desk.</p>
+</div>
+<div class="review">
+<div class="review__stamp"><span class="score">3.9 / 5</span>EDITOR'S STAMP</div>
+<div class="review__body">
+<blockquote>"Nine solo showcases dressed up as a group album — generous to the members, a little exhausting as a single sitting, and worth it for at least three of the nine detours."</blockquote>
+<p><strong>Ten: The Story Goes On (2025): TWICE's 10th-anniversary album, and the closest thing to a full-cast introduction the group has released.</strong> Lead single "Me+You" is a warm, '90s-leaning R&B-pop track about the group's relationship with fans; the other nine tracks are individual member solo songs, most previewed earlier on the This Is For World Tour.</p>
+<p>Critics split roughly down the middle: Clash gave it 8/10, praising how far the members' individual styles had evolved; AllMusic was cooler at 3/5, calling it a fairly standard hip-hop-inflected pop outing. Both are fair reads of the same record — it plays better as nine spotlight moments than as nine songs meant to cohere.</p>
+<ul class="tracklist">
+<li class="title-track"><span class="n mono">01</span> Me+You · Title Track</li>
+<li><span class="n mono">02</span> MEEEEEE (Nayeon Solo)</li>
+<li><span class="n mono">03</span> Fix a Drink (Jeongyeon Solo)</li>
+<li><span class="n mono">04</span> Move Like That (Momo Solo)</li>
+<li><span class="n mono">05</span> Decaffeinated (Sana Solo)</li>
+<li><span class="n mono">06</span> ATM (Jihyo Solo)</li>
+<li><span class="n mono">07</span> Stone Cold (Mina Solo)</li>
+<li><span class="n mono">08</span> Chess (Dahyun Solo)</li>
+<li><span class="n mono">09</span> In My Room (Chaeyoung Solo)</li>
+<li><span class="n mono">10</span> Dive In (Tzuyu Solo)</li>
+</ul>
+<a class="dispatch__link" href="https://en.wikipedia.org/wiki/Ten:_The_Story_Goes_On" target="_blank" rel="noopener">Read the full track-by-track →</a>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section" id="screening">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 03 · Screening Room</p>
-            <h2>Only what JYP Entertainment's own channel actually published.</h2>
-          </div>
-          <p class="desk-note">Every clip here is an official YouTube embed, verified against the JYP Entertainment channel. If it isn't published there, it doesn't play on this desk.</p>
-        </div>
-        <div class="screen-grid">
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <iframe src="https://www.youtube.com/embed/zqorlX_5oHQ" title="TWICE &quot;ME+YOU&quot; Official M/V" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="screen-card__body">
-              <h3>"ME+YOU" — Official M/V</h3>
-              <p>The lead single from the 10th-anniversary album <em>Ten: The Story Goes On</em>, referencing the group's earliest music videos throughout.</p>
-            </div>
-          </div>
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <iframe src="https://www.youtube.com/embed/eHHQaoEW30Q" title="TWICE &quot;THIS IS FOR&quot; Official M/V" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="screen-card__body">
-              <h3>"THIS IS FOR" — Official M/V</h3>
-              <p>The title track from the group's fourth Korean studio album and the song the This Is For World Tour was built around.</p>
-            </div>
-          </div>
-          <div class="screen-card">
-            <div class="screen-card__frame">
-              <div class="screen-card__placeholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5Z"/></svg>
-                <span class="tag tag--sample">Slot reserved</span>
-              </div>
-            </div>
-            <div class="screen-card__body">
-              <h3>Next comeback, whenever it lands</h3>
-              <p>A reserved slot for the group's next title track, added once an official MV is published and its channel is verified.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="desk-section" id="screening">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 03 · Screening Room</p>
+<h2>Only what JYP Entertainment's own channel actually published.</h2>
+</div>
+<p class="desk-note">Every clip here is an official YouTube embed, verified against the JYP Entertainment channel. If it isn't published there, it doesn't play on this desk.</p>
+</div>
+<div class="screen-grid">
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/pqvN3jlizW4" title="TWICE &quot;#BEST 2015-2025&quot; Official Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"#BEST 2015-2025" — Official Teaser</h3>
+<p>The trailer for the 10th-anniversary compilation, embedded from TWICE Japan's official channel.</p>
+</div>
+</div>
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/zqorlX_5oHQ" title="TWICE &quot;ME+YOU&quot; Official M/V" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"ME+YOU" — Official M/V</h3>
+<p>The lead single from the 10th-anniversary album <em>Ten: The Story Goes On</em>, referencing the group's earliest music videos throughout.</p>
+</div>
+</div>
+<div class="screen-card">
+<div class="screen-card__frame">
+<iframe src="https://www.youtube.com/embed/eHHQaoEW30Q" title="TWICE &quot;THIS IS FOR&quot; Official M/V" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="screen-card__body">
+<h3>"THIS IS FOR" — Official M/V</h3>
+<p>The title track from the group's fourth Korean studio album and the song the This Is For World Tour was built around.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="signal">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 04 · Signal</p>
-            <h2>Measured from right now.</h2>
-          </div>
-          <p class="desk-note">No new tour or comeback has been officially announced yet. Until one is, this desk tracks how much time has passed since the latest confirmed news — it'll switch back to counting down the moment there's a real date to count down to.</p>
-        </div>
-        <div class="signal-list" id="signalList">
-          <div class="signal-row" data-target="2026-08-10T10:00:00+09:00">
-            <div>
-              <p class="signal-row__name">Jeongyeon signs with VARO Entertainment <span class="tag tag--sample">Estimated time</span></p>
-              <p class="signal-row__meta mono">~10:00 AM KST (estimated) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-          <div class="signal-row" data-target="2026-08-13T10:00:00+09:00">
-            <div>
-              <p class="signal-row__name">Chaeyoung launches "Lil Fantasy" <span class="tag tag--sample">Estimated time</span></p>
-              <p class="signal-row__meta mono">~10:00 AM KST (estimated) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-          <div class="signal-row" data-target="2026-08-26T00:00:00+09:00">
-            <div>
-              <p class="signal-row__name">#BEST 2015-2025 released <span class="tag tag--sample">Estimated time</span></p>
-              <p class="signal-row__meta mono">12:00 AM KST (estimated) · <span class="local-time">—</span></p>
-            </div>
-            <div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
-          </div>
-        </div>
-        <p class="signal-footnote">Detected timezone: <span class="mono" id="detectedTz">—</span> · Full JYP contract timeline: <a class="dispatch__link" href="https://k-crush.com/twice-jyp-contracts-explained/" target="_blank" rel="noopener">explainer ↗</a></p>
-      </div>
-    </section>
+<section class="desk-section desk-section--alt" id="signal">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 04 · Signal</p>
+<h2>Measured from right now.</h2>
+</div>
+<p class="desk-note">No new tour or comeback has been officially announced yet. Until one is, this desk tracks how much time has passed since the latest confirmed news — it'll switch back to counting down the moment there's a real date to count down to.</p>
+</div>
+<div class="signal-list" id="signalList">
+<div class="signal-row" data-target="2026-08-10T10:00:00+09:00">
+<div>
+<p class="signal-row__name">Jeongyeon signs with VARO Entertainment <span class="tag tag--sample">Estimated time</span></p>
+<p class="signal-row__meta mono">~10:00 AM KST (estimated) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+<div class="signal-row" data-target="2026-08-13T10:00:00+09:00">
+<div>
+<p class="signal-row__name">Chaeyoung launches "Lil Fantasy" <span class="tag tag--sample">Estimated time</span></p>
+<p class="signal-row__meta mono">~10:00 AM KST (estimated) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+<div class="signal-row" data-target="2026-08-26T00:00:00+09:00">
+<div>
+<p class="signal-row__name">#BEST 2015-2025 released <span class="tag tag--sample">Estimated time</span></p>
+<p class="signal-row__meta mono">12:00 AM KST (estimated) · <span class="local-time">—</span></p>
+</div>
+<div class="signal-row__countdown mono"><span class="countdown-value">—</span><small>time since</small></div>
+</div>
+</div>
+<p class="signal-footnote">Detected timezone: <span class="mono" id="detectedTz">—</span> · Full JYP contract timeline: <a class="dispatch__link" href="https://k-crush.com/twice-jyp-contracts-explained/" target="_blank" rel="noopener">explainer ↗</a></p>
+</div>
+</section>
 
-    <section class="desk-section" id="quiz">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 05 · Quiz</p>
-            <h2>Which era matches your mood tonight?</h2>
-          </div>
-          <p class="desk-note">Three questions, no email required — built to demonstrate the interaction, not to collect data.</p>
-        </div>
+<section class="desk-section" id="quiz">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 05 · Quiz</p>
+<h2>Which era matches your mood tonight?</h2>
+</div>
+<p class="desk-note">Three questions, no email required — built to demonstrate the interaction, not to collect data.</p>
+</div>
 
-        <div class="quiz-panel">
-          <div class="quiz-body" id="quizBody">
-            <div class="quiz-question-wrap" data-q="0">
-              <p class="quiz-progress">QUESTION 1 / 3</p>
-              <p class="quiz-question">Pick a late-night activity.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Rewatching the "Like OOH-AHH" debut stage on loop</button>
-                <button class="quiz-option" data-era="tt">Doing the "TT" finger-heart pose in the mirror</button>
-                <button class="quiz-option" data-era="mature">Queuing up "Feel Special" and "Alcohol-Free" back to back</button>
-                <button class="quiz-option" data-era="current">Learning the "This Is For" choreo, phone in hand</button>
-              </div>
-            </div>
-            <div class="quiz-question-wrap is-hidden" data-q="1">
-              <p class="quiz-progress">QUESTION 2 / 3</p>
-              <p class="quiz-question">Pick a concept.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Nine girls, one crush, played entirely for cute</button>
-                <button class="quiz-option" data-era="tt">A carnival of exaggerated faces and candy colors</button>
-                <button class="quiz-option" data-era="mature">Moody, mature pop with a nightlife palette</button>
-                <button class="quiz-option" data-era="current">Brash, bouncy, and unapologetically for the girls</button>
-              </div>
-            </div>
-            <div class="quiz-question-wrap is-hidden" data-q="2">
-              <p class="quiz-progress">QUESTION 3 / 3</p>
-              <p class="quiz-question">Pick a feeling you want from a comeback.</p>
-              <div class="quiz-options">
-                <button class="quiz-option" data-era="debut">Wonder</button>
-                <button class="quiz-option" data-era="tt">Chaos, affectionately</button>
-                <button class="quiz-option" data-era="mature">Sophistication</button>
-                <button class="quiz-option" data-era="current">Confidence</button>
-              </div>
-            </div>
-          </div>
+<div class="quiz-panel">
+<div class="quiz-body" id="quizBody">
+<div class="quiz-question-wrap" data-q="0">
+<p class="quiz-progress">QUESTION 1 / 3</p>
+<p class="quiz-question">Pick a late-night activity.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Rewatching the "Like OOH-AHH" debut stage on loop</button>
+<button class="quiz-option" data-era="tt">Doing the "TT" finger-heart pose in the mirror</button>
+<button class="quiz-option" data-era="mature">Queuing up "Feel Special" and "Alcohol-Free" back to back</button>
+<button class="quiz-option" data-era="current">Learning the "This Is For" choreo, phone in hand</button>
+</div>
+</div>
+<div class="quiz-question-wrap is-hidden" data-q="1">
+<p class="quiz-progress">QUESTION 2 / 3</p>
+<p class="quiz-question">Pick a concept.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Nine girls, one crush, played entirely for cute</button>
+<button class="quiz-option" data-era="tt">A carnival of exaggerated faces and candy colors</button>
+<button class="quiz-option" data-era="mature">Moody, mature pop with a nightlife palette</button>
+<button class="quiz-option" data-era="current">Brash, bouncy, and unapologetically for the girls</button>
+</div>
+</div>
+<div class="quiz-question-wrap is-hidden" data-q="2">
+<p class="quiz-progress">QUESTION 3 / 3</p>
+<p class="quiz-question">Pick a feeling you want from a comeback.</p>
+<div class="quiz-options">
+<button class="quiz-option" data-era="debut">Wonder</button>
+<button class="quiz-option" data-era="tt">Chaos, affectionately</button>
+<button class="quiz-option" data-era="mature">Sophistication</button>
+<button class="quiz-option" data-era="current">Confidence</button>
+</div>
+</div>
+</div>
 
-          <div class="quiz-result" id="quizResult">
-            <p class="quiz-progress">RESULT</p>
-            <h3 class="quiz-result__title" id="resultTitle"></h3>
-            <p class="quiz-result__body" id="resultBody"></p>
-            <p class="quiz-result__track mono" id="resultTrack"></p>
-            <button class="quiz-reset" id="quizReset">Take it again ↺</button>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="quiz-result" id="quizResult">
+<p class="quiz-progress">RESULT</p>
+<h3 class="quiz-result__title" id="resultTitle"></h3>
+<p class="quiz-result__body" id="resultBody"></p>
+<p class="quiz-result__track mono" id="resultTrack"></p>
+<button class="quiz-reset" id="quizReset">Take it again ↺</button>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="desk-section desk-section--alt" id="market">
-      <div class="wrap">
-        <div class="desk-head">
-          <div>
-            <p class="section-label">Desk 06 · Market</p>
-            <h2>Buying official, from outside Korea.</h2>
-          </div>
-          <p class="desk-note">Links go to official storefronts. On the live site, tagged links here are where affiliate revenue would come from.</p>
-        </div>
-        <div class="market-grid">
-          <div class="market-card">
-            <h3>TWICE Official Store</h3>
-            <p>#BEST 2015-2025 and other album versions, photocards, and official merch, with international shipping.</p>
-            <a href="https://twiceshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
-          </div>
-          <div class="market-card">
-            <h3>JYP Shop</h3>
-            <p>The label's own storefront for TWICE and labelmates, merch and albums shipped worldwide.</p>
-            <a href="https://en.thejypshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
-          </div>
-          <div class="market-card">
-            <h3>Weverse — member updates</h3>
-            <p>With no group tour running right now, this is where individual members — and Jeongyeon and Chaeyoung's new ventures — post directly.</p>
-            <a href="https://weverse.io/twice" target="_blank" rel="noopener">See official updates ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<section class="desk-section desk-section--alt" id="market">
+<div class="wrap">
+<div class="desk-head">
+<div>
+<p class="section-label">Desk 06 · Market</p>
+<h2>Buying official, from outside Korea.</h2>
+</div>
+<p class="desk-note">Links go to official storefronts. On the live site, tagged links here are where affiliate revenue would come from.</p>
+</div>
+<div class="market-grid">
+<div class="market-card">
+<h3>TWICE Official Store</h3>
+<p>#BEST 2015-2025 and other album versions, photocards, and official merch, with international shipping.</p>
+<a href="https://twiceshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
+</div>
+<div class="market-card">
+<h3>JYP Shop</h3>
+<p>The label's own storefront for TWICE and labelmates, merch and albums shipped worldwide.</p>
+<a href="https://en.thejypshop.com/" target="_blank" rel="noopener">Visit store ↗ <span class="tag tag--sample" style="margin-left:.3rem;">Affiliate link (example)</span></a>
+</div>
+<div class="market-card">
+<h3>Weverse — member updates</h3>
+<p>With no group tour running right now, this is where individual members — and Jeongyeon and Chaeyoung's new ventures — post directly.</p>
+<a href="https://weverse.io/twice" target="_blank" rel="noopener">See official updates ↗</a>
+</div>
+</div>
+</div>
+</section>
+</main>
 
-  <footer class="colophon" id="about">
-    <div class="wrap colophon__grid">
-      <div>
-        <a class="wordmark" href="#top">TWICE Wire</a>
-        <p>An independent, unofficial wire for English-speaking ONCE — built to translate, schedule, and curate, never to reproduce.</p>
-      </div>
-      <div>
-        <p>TWICE Wire is an independent fan project. It is not affiliated with, endorsed by, or sponsored by JYP Entertainment, VARO Entertainment, or the members of TWICE. All trademarks and copyrighted material belong to their respective owners. Video appears exclusively through official YouTube embeds and is never re-hosted; no third-party photography appears on this page.</p>
-        <p class="colophon__fine">PROTOTYPE BUILD — News Desk items, the Ten: The Story Goes On review, and Signal Desk timestamps are compiled from public reporting as of August 2026 and linked to their original sources; this page itself is not yet a live, continuously-updated site. Times marked "estimated" have not been confirmed down to the hour by an official announcement. Verify dates and prices with the artist's official channel or store before buying anything.</p>
-      </div>
-    </div>
-  </footer>
+<footer class="colophon" id="about">
+<div class="wrap colophon__grid">
+<div>
+<a class="wordmark" href="#top">TWICE Wire</a>
+<p>An independent, unofficial wire for English-speaking ONCE — built to translate, schedule, and curate, never to reproduce.</p>
+</div>
+<div>
+<p>TWICE Wire is an independent fan project. It is not affiliated with, endorsed by, or sponsored by JYP Entertainment, VARO Entertainment, or the members of TWICE. All trademarks and copyrighted material belong to their respective owners. Video appears exclusively through official YouTube embeds and is never re-hosted; no third-party photography appears on this page.</p>
+<p class="colophon__fine">PROTOTYPE BUILD — News Desk items, the Ten: The Story Goes On review, and Signal Desk timestamps are compiled from public reporting as of August 2026 and linked to their original sources; this page itself is not yet a live, continuously-updated site. Times marked "estimated" have not been confirmed down to the hour by an official announcement. Verify dates and prices with the artist's official channel or store before buying anything.</p>
+</div>
+</div>
+</footer>
 </div>
 
 <script>
-  // ---- Signal desk: live elapsed/countdown timers + local time conversion ----
-  (function(){
-    var tzEl = document.getElementById('detectedTz');
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (tzEl) tzEl.textContent = tz;
+// ---- Signal desk: live elapsed/countdown timers + local time conversion ----
+(function(){
+var tzEl = document.getElementById('detectedTz');
+var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+if (tzEl) tzEl.textContent = tz;
 
-    var rows = document.querySelectorAll('.signal-row');
-    rows.forEach(function(row){
-      var target = new Date(row.getAttribute('data-target'));
-      var localEl = row.querySelector('.local-time');
-      if (localEl){
-        localEl.textContent = target.toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
-      }
-      var cdEl = row.querySelector('.countdown-value');
-      var labelEl = row.querySelector('.signal-row__countdown small');
-      function tick(){
-        var now = new Date();
-        var diff = target - now;
-        var isPast = diff <= 0;
-        var abs = Math.abs(diff);
-        var d = Math.floor(abs / 86400000);
-        var h = Math.floor((abs % 86400000) / 3600000);
-        var m = Math.floor((abs % 3600000) / 60000);
-        var s = Math.floor((abs % 60000) / 1000);
-        cdEl.textContent = d + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
-        if (labelEl) labelEl.textContent = isPast ? 'time since' : 'time left';
-      }
-      tick();
-      setInterval(tick, 1000);
-    });
-  })();
+var rows = document.querySelectorAll('.signal-row');
+rows.forEach(function(row){
+var target = new Date(row.getAttribute('data-target'));
+var localEl = row.querySelector('.local-time');
+if (localEl){
+localEl.textContent = target.toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
+}
+var cdEl = row.querySelector('.countdown-value');
+var labelEl = row.querySelector('.signal-row__countdown small');
+function tick(){
+var now = new Date();
+var diff = target - now;
+var isPast = diff <= 0;
+var abs = Math.abs(diff);
+var d = Math.floor(abs / 86400000);
+var h = Math.floor((abs % 86400000) / 3600000);
+var m = Math.floor((abs % 3600000) / 60000);
+var s = Math.floor((abs % 60000) / 1000);
+cdEl.textContent = d + 'd ' + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
+if (labelEl) labelEl.textContent = isPast ? 'time since' : 'time left';
+}
+tick();
+setInterval(tick, 1000);
+});
+})();
 
-  // ---- Quiz desk ----
-  (function(){
-    var scores = {debut:0, tt:0, mature:0, current:0};
-    var qWraps = Array.prototype.slice.call(document.querySelectorAll('.quiz-question-wrap'));
-    var resultPanel = document.getElementById('quizResult');
-    var resultTitle = document.getElementById('resultTitle');
-    var resultBody = document.getElementById('resultBody');
-    var resultTrack = document.getElementById('resultTrack');
-    var resetBtn = document.getElementById('quizReset');
+// ---- Quiz desk ----
+(function(){
+var scores = {debut:0, tt:0, mature:0, current:0};
+var qWraps = Array.prototype.slice.call(document.querySelectorAll('.quiz-question-wrap'));
+var resultPanel = document.getElementById('quizResult');
+var resultTitle = document.getElementById('resultTitle');
+var resultBody = document.getElementById('resultBody');
+var resultTrack = document.getElementById('resultTrack');
+var resetBtn = document.getElementById('quizReset');
 
-    var results = {
-      debut: {
-        title: "You're a Like OOH-AHH purist.",
-        body: "You want the group at its origin — nine girls, one crush, and pure, uncomplicated wonder before any of it got complicated.",
-        track: "Starter track: “Like OOH-AHH”"
-      },
-      tt: {
-        title: "You live in the TT era forever.",
-        body: "Maximum, chaotic, candy-colored fun — you want the group at its most purely, deliberately silly.",
-        track: "Starter track: “TT”"
-      },
-      mature: {
-        title: "Feel Special is your frequency.",
-        body: "You came for the turn toward something moodier and more grown-up — sophistication over cute, and you'll take it every time.",
-        track: "Starter track: “Feel Special”"
-      },
-      current: {
-        title: "You're tuned to right now — the This Is For era.",
-        body: "Brash, bouncy, and unapologetically for the girls — exactly the register the group's current sound is built for.",
-        track: "Starter track: “This Is For”"
-      }
-    };
+var results = {
+debut: {
+title: "You're a Like OOH-AHH purist.",
+body: "You want the group at its origin — nine girls, one crush, and pure, uncomplicated wonder before any of it got complicated.",
+track: "Starter track: “Like OOH-AHH”"
+},
+tt: {
+title: "You live in the TT era forever.",
+body: "Maximum, chaotic, candy-colored fun — you want the group at its most purely, deliberately silly.",
+track: "Starter track: “TT”"
+},
+mature: {
+title: "Feel Special is your frequency.",
+body: "You came for the turn toward something moodier and more grown-up — sophistication over cute, and you'll take it every time.",
+track: "Starter track: “Feel Special”"
+},
+current: {
+title: "You're tuned to right now — the This Is For era.",
+body: "Brash, bouncy, and unapologetically for the girls — exactly the register the group's current sound is built for.",
+track: "Starter track: “This Is For”"
+}
+};
 
-    document.getElementById('quizBody').addEventListener('click', function(e){
-      var btn = e.target.closest('.quiz-option');
-      if (!btn) return;
-      var era = btn.getAttribute('data-era');
-      scores[era]++;
-      var currentWrap = btn.closest('.quiz-question-wrap');
-      var idx = qWraps.indexOf(currentWrap);
-      currentWrap.classList.add('is-hidden');
-      if (qWraps[idx+1]){
-        qWraps[idx+1].classList.remove('is-hidden');
-      } else {
-        var winner = Object.keys(scores).reduce(function(a,b){ return scores[a] >= scores[b] ? a : b; });
-        var r = results[winner];
-        resultTitle.textContent = r.title;
-        resultBody.textContent = r.body;
-        resultTrack.textContent = r.track;
-        resultPanel.classList.add('is-active');
-      }
-    });
+document.getElementById('quizBody').addEventListener('click', function(e){
+var btn = e.target.closest('.quiz-option');
+if (!btn) return;
+var era = btn.getAttribute('data-era');
+scores[era]++;
+var currentWrap = btn.closest('.quiz-question-wrap');
+var idx = qWraps.indexOf(currentWrap);
+currentWrap.classList.add('is-hidden');
+if (qWraps[idx+1]){
+qWraps[idx+1].classList.remove('is-hidden');
+} else {
+var winner = Object.keys(scores).reduce(function(a,b){ return scores[a] >= scores[b] ? a : b; });
+var r = results[winner];
+resultTitle.textContent = r.title;
+resultBody.textContent = r.body;
+resultTrack.textContent = r.track;
+resultPanel.classList.add('is-active');
+}
+});
 
-    resetBtn.addEventListener('click', function(){
-      scores = {debut:0, tt:0, mature:0, current:0};
-      qWraps.forEach(function(w, i){ w.classList.toggle('is-hidden', i !== 0); });
-      resultPanel.classList.remove('is-active');
-    });
-  })();
+resetBtn.addEventListener('click', function(){
+scores = {debut:0, tt:0, mature:0, current:0};
+qWraps.forEach(function(w, i){ w.classList.toggle('is-hidden', i !== 0); });
+resultPanel.classList.remove('is-active');
+});
+})();
 </script>
 </body>
 </html>
